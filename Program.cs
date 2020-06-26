@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Linq;
+using CommandLine;
 
 namespace learn_search
 {
@@ -10,6 +11,17 @@ namespace learn_search
     {
         // TODO: Add this to app config or read from an environment variable.
         static string RepoRoot = "/Users/thpetche/Dev/tpetchel/learn-pr";
+
+        // Command-line options.
+        public class Options
+        {
+            [Option('v', "verbose", Required = false, HelpText = "Print unit-level search results.")]
+            public bool Verbose { get; set; }
+            [Option('f', "file", Required = true, HelpText = "The .csv file to process.")]
+            public string File { get; set; }
+            [Option('t', "topic", Required = false, HelpText = "Process only this topic.")]
+            public string Topic { get; set; }
+        }
 
         // Represents a Learn unit (Markdown) file.
         class Unit
@@ -144,14 +156,23 @@ namespace learn_search
 
         static void Main(string[] args)
         {
-            // TODO: Make this a command-line argument or throw in app config or an environment variable.
-            bool printRawHits = true;
+            bool printRawHits = false;
+            string csvFile = null;
+            string topicFilter = null;
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed<Options>(o =>
+                {
+                    printRawHits = o.Verbose;
+                    csvFile = o.File;
+                    topicFilter = o.Topic;
+                });
 
             // Read search entries from file.
             // TODO: We can use a more robust .csv reader if we need to handle things like embedded commas.
             var topics = new Dictionary<string, List<SearchEntry>>();
-            using(var reader = new StreamReader("test.csv"))
+            using(var reader = new StreamReader(csvFile))
             {
+                int lineNumber = 1;
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
@@ -163,7 +184,15 @@ namespace learn_search
                     {
                         topics.Add(topic, new List<SearchEntry>());
                     }
-                    topics[topic].Add(new SearchEntry(float.Parse(values[1]), values[2]));
+                    try
+                    {
+                        topics[topic].Add(new SearchEntry(float.Parse(values[1]), values[2]));
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine($"!!Error processing topic '{topic}', line {lineNumber}.");
+                    }
+                    lineNumber++;
                 }
             }
 
@@ -203,6 +232,13 @@ namespace learn_search
                         {
                             foreach (var topic in topics)
                             {
+                                // Skip if the user specified a topic filter and this topic
+                                // doesn't match it.
+                                if (topicFilter != null && topicFilter != topic.Key)
+                                {
+                                    continue;
+                                }
+
                                 foreach (var entry in topic.Value)
                                 {
                                     // Check whether the current keyword matches the current line.
@@ -243,6 +279,13 @@ namespace learn_search
             // Recommend the top 3 results by printing info about them to the console.
             foreach (var topic in topics)
             {
+                // Skip if the user specified a topic filter and this topic
+                // doesn't match it.
+                if (topicFilter != null && topicFilter != topic.Key)
+                {
+                    continue;
+                }
+
                 Console.WriteLine($"{topic.Key}");
 
                 // Add up the weighted scores that were recorded for each module.
@@ -308,7 +351,7 @@ namespace learn_search
                         }
                         foreach (var entry in topic.Value)
                         {
-                            Console.WriteLine($"{Tabs(2)}Keyword '{entry.RegexKeyword}':");
+                            Console.WriteLine($"{Tabs(2)}Keyword '{entry.RegexKeyword}' (weight={entry.Weight}):");
                             foreach (var topModule in topModules)
                             {
                                 foreach (var unitHit in entry.Results.UnitHits)
