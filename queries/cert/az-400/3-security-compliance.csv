@@ -1,0 +1,55 @@
+design-access,1,access
+design-access,2,Azure AD
+design-access,2,Privileged Identity Management
+design-access,1,PIM
+design-access,2,Conditional Access
+design-access,1.5,MFA
+organize-team,1,Azure AD
+organize-team,2,Azure AD group
+organize-team,1,team
+sp-ma,1,service principal
+sp-ma,1,managed identity
+configure-service-conn,2,service connection
+configure-service-conn,1,manage
+vault-solution,1,Azure Key Vault
+vault-solution,2,Hashicorp Vault
+security-certs,1,certificate
+security-certs,2,security cert.+
+secret-storage,1,secret
+secret-storage,1,storage
+secret-storage,2,secret.+storage
+secret-storage,2,secret.+retriev.+
+deploy-secret,1,secret
+deploy-secret,1,deploy
+deploy-secret,1,secret file
+deploy-secret,1,release
+dep-scanning-security,1,automate
+dep-scanning-security,1,scan
+dep-scanning-security,1,security
+dep-scanning-security,1,container
+dep-scanning-security,1,owasp
+dep-scanning-compliance,1,scan
+dep-scanning-compliance,1,compliance
+dep-scanning-compliance,1,MIT
+dep-scanning-compliance,1,GPL
+dep-scanning-compliance,1,license
+assess-report-risks,1,assess
+assess-report-risks,1,report
+assess-report-risks,1,risk
+code-compliance,1,GitHub security
+code-compliance,1,pipeline.+scan
+code-compliance,1,scan.+pipeline
+code-compliance,1,Git hook
+code-compliance,1,SonarQube
+azure-policy,2,Azure Policy
+azure-policy,1,organization
+container-scanning,1,container
+container-scanning,1,scan
+container-scanning,2,malware
+container-scanning,2,crypto
+container-scanning,2,mining
+container-registry,2,Azure Container Registry
+container-registry,1,Azure Policy
+break-the-glass,2,break.+glass
+break-the-glass,1,security
+break-the-glass,1,incident

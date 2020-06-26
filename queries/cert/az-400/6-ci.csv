@@ -1,0 +1,20 @@
+﻿devsecops,1,devsecops
+internationalization,2,internationalization
+internationalization,1,international
+testing,1,fuzz
+testing,1,chaos
+jenkins,1,Jenkins
+package-management,1,GitHub Packages
+package-management,1,Azure Artifacts
+package-management,1,Azure Automation
+package-management,1,Azure Automation Runbooks
+package-management,1,NuGet
+package-management,1,Jfrog
+package-management,1,Artifactory
+semver,1,semantic versioning
+package-deps,1,NuKeeper
+package-deps,1,GreenKeeper
+dsc,1,desired state configuration
+dsc,1,DSC
+trigger,1,build.+trigger
+health,1,flaky

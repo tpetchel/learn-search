@@ -1,0 +1,67 @@
+assess-log-framework,1,log
+assess-log-framework,2,log.+framework
+assess-log-framework,1,configure
+log-aggregation-storage,3,log.+aggregation
+log-aggregation-storage,3,log.+storage
+log-aggregation-storage,1,log
+log-aggregation-storage,2,Azure storage
+log-aggregation-monitor,3,log.+aggregation
+log-aggregation-monitor,3,log.+monitor
+log-aggregation-monitor,1,log
+log-aggregation-monitor,2,Azure Monitor
+log-access-control,1,log
+log-access-control,3,log.+access
+log-access-control,2,workspace
+log-access-control,2,resource
+log-access-control,3,log.+control
+integrate-crash-analytics,1,crash
+integrate-crash-analytics,3,crash.+analytics
+integrate-crash-analytics,4,App Center Crashes
+integrate-crash-analytics,4,Crashlytics
+design-implement-distributed-tracing,4,distributed.+tracing
+design-implement-distributed-tracing,1,tracing
+inspect-app-perf,1,application.+performance
+inspect-infra-perf,1,infrastructure.+performance
+telemetry-key-metrics,4,key.+metrics
+telemetry-key-metrics,2,metrics
+telemetry-key-metrics,1,CPU
+telemetry-key-metrics,1,memory
+telemetry-key-metrics,1,disk
+telemetry-key-metrics,1,network
+alerts-key-metrics,1,alerts
+alerts-key-metrics,1,metrics
+alerts-key-metrics,4,key.+metrics
+alerts-key-metrics,2,email
+alerts-key-metrics,2,SMS
+alerts-key-metrics,2,webhook
+alerts-key-metrics,2,Teams
+alerts-key-metrics,2,Slack
+integrate-user-analytics,1,user.+analytics
+integrate-user-analytics,2,Application Insights
+integrate-user-analytics,1.5,funnel
+integrate-user-analytics,2,Visual Studio App Center
+integrate-user-analytics,2,TestFlight
+integrate-user-analytics,2,Google Analytics
+container-monitoring,1,monitoring
+container-monitoring,2,container.+monitor
+container-monitoring,4,Azure Monitor
+container-monitoring,4,Prometheus
+container-monitoring,1,container
+container-monitoring,2,monitor.+container
+container-monitoring,2,microservice
+container-monitoring,3,monitor.+microservice
+monitoring-tools,1,monitor.+tools
+monitoring-tools,2,Azure Monitor
+monitoring-tools,2,Application Insights
+monitoring-tools,2,Dynatrace
+monitoring-tools,2,New Relic
+monitoring-tools,2,Naggios
+monitoring-tools,2,Zabbix
+feedback-loop-monitoring-tools,2,Azure Diagnostics
+feedback-loop-monitoring-tools,2,VM extension
+feedback-loop-monitoring-tools,2,Azure Platform Logs
+feedback-loop-monitoring-tools,2,Event Grid
+feedback-loop-monitoring-tools,1,feedback.+loop
+mac-monitoring,2,monitoring
+mac-monitoring,1,access control
+mac-monitoring,1,control access

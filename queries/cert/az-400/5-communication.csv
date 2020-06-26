@@ -1,0 +1,39 @@
+dashboards,1,dashboard
+dashboards,1,Azure DevOps
+dashboards,2,custom.+dashboard
+cost-management,2,cost management
+cost-management,1,communicat.+
+cost-management,2,TCO
+work-item-tracking,1,Azure DevOps
+work-item-tracking,2,JIRA
+work-item-tracking,1,work item
+work-item-tracking,1,release
+user-analytics,1,user.+analytics
+user-analytics,1,communicat.+
+onboarding,2,onboarding
+onboarding,1,employee
+external-deps,1,document
+external-deps,1,external.+dependencies
+external-deps,1,integration
+external-deps,1,package
+artifacts,1,version
+artifacts,1,release.+notes
+artifacts,1,document
+artifacts,1,artifact
+monitoring-tools,1,Microsoft Teams
+monitoring-tools,1,Slack
+monitoring-tools,1,dashboard
+monitoring-tools,1,communicat.+
+monitoring-tools,1,team
+monitoring-tools,1,team.+memebers
+communication,1,email
+communication,1,SMS
+communication,1,Microsoft Teams
+communication,1,Slack
+communication,1,metrics
+communication,1,alerts
+communication,1,severity
+communication-platforms,1,build
+communication-platforms,1,fail
+communication-platforms,1,release
+communication-platforms,1,communicat.+
